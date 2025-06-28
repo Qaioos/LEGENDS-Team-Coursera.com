@@ -1,0 +1,198 @@
+#header .first-h1-header > a{
+    background:url(../../images/OIP\ \(1\).jpg)  ;
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+    animation: legends 2s linear infinite;
+}
+
+#banner .inner .fa-gem{
+    transform: rotateY(0deg);
+    animation: transform 5s linear infinite;
+    margin-bottom: 50px;
+
+}
+
+@keyframes transform {
+    to{
+    transform: rotateY(172deg);
+    }
+}
+
+#banner .typewriter { 
+
+display: inline-block;
+overflow: hidden;
+border-right: 2px solid black; 
+white-space: nowrap;
+animation: typing 4s steps(100, end),
+erase 4s steps(20, end) 4s; 
+animation-fill-mode:backwards; 
+animation-iteration-count: infinite; 
+width: 200px; 
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50% , -50%);
+} 
+
+.text {
+display: inline-block;
+}
+/* التأثير */
+@keyframes typing { 
+    from
+    { 
+        width: 0 
+    }
+    to 
+    { 
+        width: 15ch 
+    } 
+} 
+@keyframes erase { 
+    from {
+        width:15ch 
+    } 
+    to 
+    { 
+        width: 0 
+    } 
+} 
+
+
+#banner .first-p-title{
+    background:url(../../images/OIP\ \(1\).jpg)  ;
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+    animation: legends 2s linear infinite;
+}
+@keyframes legends {
+    to{
+        background-position-x: -300px;
+    }
+}
+@media (max-width:767px) {
+
+@keyframes legends {
+    to{
+        background-position-x: -300px;
+    }
+}
+}
+#banner p{
+    font-size: 25px;
+    text-align: center;
+}
+@media (max-width:767px){
+    #banner p{
+        font-size: 18px;
+    }
+}
+.register-button { 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 30px; 
+    font-size: 18px; 
+    color: inherit; 
+    background-color: transparent;
+     /* موروث/شفاف */ 
+    border: 2px solid currentColor; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    animation: borderPulse 4s linear infinite; 
+    transition: background-color 0.4s ease, color 0.4s ease, 
+    transform 0.2s ease; 
+}
+
+@keyframes borderPulse {
+    0% { 
+        border-color: rgba(194, 15, 15, 0.993); 
+    } 
+    20%{
+        background-color: #4c5c96;
+    }
+    70% { 
+        border-color: rgb(19, 234, 55); 
+    } 
+    80%{
+        border-color: rgba(255, 221, 0, 0.836); 
+    }
+    100% { 
+        border-color: rgba(194, 15, 15, 0.993); 
+    } 
+
+} /* تأثير عند مرور الماوس */ 
+.register-button:hover { 
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة ناعمة */ 
+} /* عند النقر */ 
+    .register-button:active { 
+        background-color: rgba(255, 255, 255, 0.2); 
+    } 
+
+
+
+#wrapper  img{
+    position: relative;
+    background-position-x: -200px; 
+    height: 250px;
+        width: 250px;
+
+    z-index: 1;
+}
+.image .before{
+    background-color: rgba(26, 23, 23, 0.514);
+    position: relative;
+    display: block;
+    top: 10px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    animation: corsera 4s linear infinite;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+@keyframes corsera {
+    for{
+        top: 1px;
+    }
+    to{
+        top: 260px;
+    }
+}
+@media (max-width:767px) {
+    #wrapper  img{
+        width: 192px;
+        height: 192px;
+    }
+}
+/* the-rate-us */
+@media (max-width:767px){
+    .the-rate-us{
+        display: flex;
+        justify-content: center;
+    }
+}
+/* the-rate-us */
+#rating-popup{
+
+}
+@media (max-width:767px)  {
+    #rating-popup{
+
+        max-width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+}
+}
+
+

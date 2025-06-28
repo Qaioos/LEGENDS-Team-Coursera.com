@@ -1,0 +1,83 @@
+<div
+      id="rating-popup"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+      "
+    >
+      <h3 style="margin: 0 0 10px">قيّم تجربتك مع موقع Legends</h3>
+      <div id="stars" style="font-size: 24px; cursor: pointer">★★★★★</div>
+      <button
+        id="submit-rating"
+        style="
+          margin-top: 15px;
+          background: #007bff;
+          color: white;
+          border: none;
+          padding: 8px 14px;
+          border-radius: 8px;
+        "
+      >
+        إرسال التقييم
+      </button>
+    </div>
+    <script>
+
+      window.onload = function() { if (!localStorage.getItem("ratingShown")) { document.getElementById("rating-popup").style.display = "block"; 
+      localStorage.setItem("ratingShown", "true");
+        } };  
+          let stars = document.getElementById("stars"); 
+          let rating = 0; 
+            stars.addEventListener("mouseover", function(e) 
+            {
+              if (e.target.innerText === "★") 
+              { 
+                let index = [...stars.children].indexOf(e.target) + 1;    highlightStars(index); 
+                }
+              }
+            );
+            stars.addEventListener("click", function(e) 
+            {
+              if (e.target.innerText === "★") { rating = [...stars.children].indexOf(e.target) + 1; highlightStars(rating);
+
+              } 
+            }
+          );
+          function highlightStars(count) 
+          {
+            for (let i = 0; i < 5; i++) 
+            {
+              stars.children[i].style.color = i < count ? "#FFD700" : "#ccc"; 
+            } 
+          }  document.getElementById("submit-rating").addEventListener("click", function()
+          { 
+            if (rating === 3) 
+            { 
+              alert("يرجى اختيار عدد النجوم قبل الإرسال."); 
+              return; }  
+              fetch("https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse", 
+              {
+                method: "POST",
+                mode: "no-cors", 
+                headers: 
+                { 
+                  "Content-Type": "application/x-www-form-urlencoded", 
+                },
+                body: entry.YOUR_ENTRY_ID=`${rating}` });
+                alert("شكرًا على تقييمك ❤️"); 
+                document.getElementById("rating-popup").style.display = "none"; });
+                stars.innerHTML = "";
+                for (let i = 0; i < 5; i++) 
+                { let star = document.createElement("span");
+                star.innerText = "★";
+                star.style.margin = "0 2px";
+                stars.appendChild(star); 
+              }
+    </script>
